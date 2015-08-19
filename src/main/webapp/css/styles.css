@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  padding: 25px 5% 0;
+  font: 1em/1.5 'Helvetica Neue',Arial,sans-serif;
+  color: #444;
+  background: #fff;
+}
+
+h1 {
+  font-size: 1.25em;
+}
+
+ #drop {
+  display: block;
+  overflow:hidden;
+  
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+  
+  -moz-transition-property: all;
+  -moz-transition-duration: 0.5s;
+  -moz-transition-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+  
+  -o-transition-property: all;
+  -o-transition-duration: 0.5s;
+  -o-transition-timing-function: cubic-bezier(0.5, 0.2, 0.3, 1.0);
+} 
+ #drop.drag-waiting {
+  padding: 150px 1em 1em 1em;
+  font-size: 1.25em;
+  text-align: center;
+  background-color: #efefef;
+  height: 70px;
+  border: 2px dashed #999;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  border-radius: 12px;
+} 
+ #drop.drag {
+   padding: 150px 1em 1em 1em;
+  font-size: 1.25em;
+  text-align: center;
+  background-color: #efefef;
+  height: 40px;
+   border: 2px dashed #999; 
+    -webkit-border-radius: 12px;
+  -moz-border-radius: 12px; 
+   border-radius: 12px;  
+} 
+#drop.drag-hover {
+  background-color:#fff;
+  cursor: copy;
+}
+
+/* #drop [type="file"] {
+  cursor: pointer;
+  position: absolute;
+    width: 90%;
+    height: 90%;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+}
+   */
+.b-palette-wrap {
+  display: block;
+  margin: 1em 0;
+  overflow: hidden;
+  zoom: 1;
+}
+  .b-palette {
+    float: left;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    border: none;
+    width: 250px;
+    height: 100px;
+    outline: none;
+  }
+  
+select,
+input[type="file"] {
+  height: 30px;
+  *margin-top: 4px;
+  line-height: 30px;
+}
+input[type="button"] {
+  height: 28px;
+margin-top: 6px;
+    margin: 0;
+    padding: 0;
+  line-height: 30px;
+}
+
