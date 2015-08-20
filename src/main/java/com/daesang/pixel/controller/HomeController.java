@@ -57,7 +57,7 @@ public class HomeController {
 	     /** @type {HashMap<String, Object>} */ 
 		 HashMap<String, Object> input = new HashMap<String, Object>();
 
-		 //픽셀 개수만큼 db input
+		 //픽셀 개수만큼 db input 현재 대표색상 1개 pixel만 추출
 	//	 for(int i=0;i<pixel.length;i++){
 			 //입력 바코드
 			 input.put("type", type);
@@ -86,17 +86,17 @@ public class HomeController {
 	 @RequestMapping(value ="/DBSave",params="Select", method = RequestMethod.POST)
 	 public ModelAndView insert(HttpServletRequest request,
 			 Model model){
-		 
+		 //db pixel data 불러오기
 		 List<HashMap<String, String>> outputs= sqlSession.selectList("userControlMapper.Select"); 
 		 this.output = new ArrayList<Object>(); 
 		 
-		 
+		 //value값만 불러오기
 		 for(HashMap<String,String> row : outputs){
 			 output.add(row.get("pixel"));			 
 			}
-		 System.out.println(output);
+		 //model에 값 전달
 		 model.addAttribute("output",output);
-		 
+		 //DBStatistics.jsp로 return
 		 return new ModelAndView("DBStatistics", "model", output);
 		}
 }

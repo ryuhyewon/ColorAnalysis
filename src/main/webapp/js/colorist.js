@@ -281,4 +281,23 @@ function handleDragDropEvent(e) {
 	        reader.readAsDataURL(file);
 	 
 	  return;
-	}   
+	}
+
+/*      var formData = new FormData();
+	 // formData.append("barcode", barcode);
+     	formData.append("file", file);
+       formData.append("pixel", uniqueColors);
+      formData.append("counter", counter);
+  
+ 	    var xhr = new XMLHttpRequest();
+		xhr.open("POST", "/DBSave", false); // If async=false, then you'll miss progress bar support.
+		xhr.onload = function () {
+			  if (xhr.status === 200 && xhr.readyState === 4 ) {
+				  alert("success");
+			  } else {
+				  alert('Error: ' + responseData); 
+			  }
+			};
+			xhr.setRequestHeader("Content-type", file.type);
+			//formData.append("pixel", uniqueColors);
+			xhr.send(formData);	 */ 
