@@ -89,56 +89,7 @@ var sortColors = function(colors) {
     var sorted_keys=sortProperties(temp);
     return sorted_keys;
 }
-function compare(averageColors){
-	 // 평균 색상배열들 간에 색상 비교하기
-    while(averageColors.length > 0) {
-      var baseCol = averageColors.shift(), //첫번째 배열값  짜르기
-          avgColor = baseCol,//avg에 값 가져옴
-          /** 배열 길이 counting하기 위한 변수*/
-          k = 0,
-          /** 해당 픽셀의 count*/
-          count=0;
-      
-      //첫번째 배열값, 다른 배열값들과 비교해주기 
-      while(true) {
-        if(averageColors.length > k) {
-          var secondCol = averageColors[k];
-          //유사한 색상일 때 두 값 평균구하여 하나의 색상으로 처리
-          if(areSimilarColors(baseCol, secondCol)){
-          	 avgColor = getAverageColor(avgColor, averageColors.splice(k,1)[0]); //k위치에 1개 잘라내기
-          	 // while(averageColors.length > 0)동안 계속 count
-          	 totalcount++;
-          	 //avgColor가 다른 배열값들과 유사한 개수만큼 count
-          	 count++;                   
-          } else 
-            k++;
-          
-        }//배열 한번 훓기
-        else
-      	  break; 
-      }
-      //avgColor값, uniqueColors array에 새로 담기
-      uniqueColors.push(avgColor);
-      //rgb값 hex로 변환하여 count와 Object객체로 헤쉬 매핑
-      var avg=rgbToHex(avgColor);
-      temp[avg]=count
-    }
-}
-/**
- * 비슷한 색상인지 비교해주는 클래스
- * @param {col1, col2} 두 색상간의 rgb비교
- */
-function areSimilarColors(col1, col2) {
-	  var delta = 100;
-	  if( 
-	      (Math.abs(col2[0] - col1[0]) <= delta) && 
-	      (Math.abs(col2[1] - col1[1]) <= delta) && 
-	      (Math.abs(col2[2] - col1[2]) <= delta) 
-	    )
-	    return true;
-	  else
-	    return false;
-	}
+
  /**
   * 색상 배열 입혀주는 container 클래스
   * @param {namesArray} pixel value 배열
